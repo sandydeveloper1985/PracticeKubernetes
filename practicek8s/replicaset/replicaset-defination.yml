@@ -1,0 +1,22 @@
+apiVerson: apps/v1
+kind: replicaset
+metadata: 
+  name: sandyreplicaset
+  labels:
+    app: ngix-replicaset
+    type: nginx
+spec:
+  template:
+    metadata:
+      name: sandypod
+    labels:
+      app: saidhamapp
+      type: frontendapp
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+    replicas: 6
+    selector:
+      matchLabels:
+        type: frontendapp
