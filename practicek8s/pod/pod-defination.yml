@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sandypod
+  labels:
+     app: saidhamapp
+     type: frontendapp
+spec:
+  containers:
+    -  name: nginx-container
+       image: nginx
+
+
